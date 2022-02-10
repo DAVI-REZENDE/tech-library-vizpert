@@ -1,14 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Container, Icon } from './styles';
 
-export function FilterButton({type}) {
+export function FilterButton({type, active, onClick}) {
 
-  const [isActive, setIsActive] = useState(false)
+  const [isButtonActive, setIsButtonActive] = useState(false)
+
+  useEffect(() => {
+    if(active === type) {
+      setIsButtonActive(true)
+    }else {
+      setIsButtonActive(false)
+    }
+  }, [active])
 
   return (
     <Container 
-      className={isActive ? 'active' : ''} 
-      onClick={() => setIsActive(!isActive)}
+      onClick={onClick}
+      className={isButtonActive ? 'active' : ''} 
     >
       <Icon type={type} />
     </Container>

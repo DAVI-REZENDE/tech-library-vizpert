@@ -24,7 +24,7 @@ export const Header = styled.header`
   }
 `;
 
-export const Footer = styled.footer`
+export const Main = styled.main`
   width: 100vw;
   height: 50vh;
   background: url(${BgFooter});
@@ -33,13 +33,17 @@ export const Footer = styled.footer`
   position: relative;
 `;
 
-export const Shelf = styled.div`
+export const Shelfs = styled.div`
   background: url(${ShelfBg}) no-repeat;
   background-position: contain;
   width: 40vw;
   height: 50vh;
 
-  margin-top: -31vh;
+  margin-top: -16%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const Filters = styled.div`
@@ -87,7 +91,7 @@ export const FiltersWrapper = styled.div`
     font-size: 16px;
     font-family: 'Zilla Slab', serif;
     text-transform: uppercase;
-    letter-spacing: 10px;
+    letter-spacing: 8px;
   }
 `;
 
@@ -102,7 +106,7 @@ export const FilterButtons = styled.div`
 `;
 
 export const Divider = styled.div`
-  width: 60%;
+  width: 80%;
   height: 5px;
   background-color: #E7DFEF;
 
