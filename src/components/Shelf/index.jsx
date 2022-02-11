@@ -1,10 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Container } from './styles';
 
 export function Shelf({position, data}) {
+
+  const [books, setBooks] = useState([])
+
+  useEffect(() => {
+    setBooks(data)
+  }, [data])
+
   return (
     <Container position={position} >
-      {data.map((book) => {
+      {books?.map((book) => {
         return (
           <div className='book' key={book.id}>
             <img src={book.image} />

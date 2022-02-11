@@ -50,36 +50,47 @@ export const Filters = styled.div`
   position: absolute;
   left: 16px;
   width: 40vw;
-  height: 50vh;
+  height: 100%;
 
-  img {
-    height: 53vh;
-    margin-top: -3vh;
-    z-index: 100;
+  display: flex;
+  align-items: flex-end;
+
+  img#lady {
     position: absolute;
+    width: 60%;
+    margin-top: -3%;
+    bottom: 0;
+    z-index: 100;
   }
 `;
 
 export const PanelFilters = styled.div`
-  background: url(${Panel}) no-repeat;
-  background-size: contain;
-  background-position: bottom;
-  width: 40vw;
-  height: 40vh;
+  width: 100%;
+  height: 80%;
 
-  position: absolute;
-  bottom: 24px;
+  position: relative;
+
   left: 24px;
   z-index: 10;
+
+  display: flex;
+  align-items: flex-end;
+
+  img#panel {
+    position: relative;
+    width: 95%;
+    margin-bottom: 10%;
+    bottom: 0;
+  }
 `;
 
 export const FiltersWrapper = styled.div`
   position: absolute;
-  right: 0;
-  bottom: 24px;
+  right: 10%;
+  /* bottom: 20%; */
+  top: 5%;
 
-  width: 20vw;
-  height: 30vh;
+  width: 40%;
   padding: 16px;
 
   display: flex;
@@ -110,15 +121,12 @@ export const Divider = styled.div`
   height: 5px;
   background-color: #E7DFEF;
 
-  margin: 16px 0;
+  margin: 5% 0;
 `;
 
 export const OrganizeButton = styled.button`
-  background: url(${ButtonBg}) no-repeat;
-  background-size: contain;
-  background-position: top;
-  width: 360px;
-  height: 87px;
-  transform: scale(80%);
+  background-color: transparent;
   border: 0;
+  width: 100%;
+
 `;

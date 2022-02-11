@@ -15,18 +15,25 @@ import {
 
 import ClockBase from '../../assets/clock_base.svg';
 import Logo from '../../assets/logo.svg';
-import ladyImage from '../../assets/lady.svg';
+import ladyImage from '../../assets/lady.svg'
+import Panel from '../../assets/board.svg';
+import ButtonBg from '../../assets/button.svg'
 
 import { FilterButton } from '../../components/FilterButton';
 import { Shelf } from '../../components/Shelf';
 
 import { books } from '../../data/books';
+import { useFilters } from '../../hooks/filters';
 
 export function Home() {
 
+  
   const [isButtonFilterActive, setIsButtonFilterActive] = useState('')
   const [shelfTop, setShelfTop] = useState([])
+  const [applyFilter, setApplyFilter] = useState('')
   const [shelfBottom, setShelfBottom] = useState([])
+  
+  const filteredBooks = useFilters(applyFilter, shelfTop, shelfBottom)
 
   useEffect(() => {
     createBooksLists()
@@ -64,6 +71,10 @@ export function Home() {
       return accumulator;
     }, []);
   };
+
+  function handleApplyFilter() {
+    setApplyFilter(isButtonFilterActive)
+  }
  
   return (
     <Container>
@@ -89,8 +100,9 @@ export function Home() {
         </Shelfs>
 
         <Filters>
-          <img src={ladyImage} />
+          <img id="lady" src={ladyImage} />
           <PanelFilters>
+            <img id="panel" src={Panel} />
             <FiltersWrapper>
               <span>sort by</span>
 
@@ -104,7 +116,9 @@ export function Home() {
 
               <Divider />
 
-              <OrganizeButton />
+              <OrganizeButton onClick={handleApplyFilter}>
+                <img src={ButtonBg} />
+              </OrganizeButton>
             </FiltersWrapper>
           </PanelFilters>
         </Filters>
