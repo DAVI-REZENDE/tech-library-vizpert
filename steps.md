@@ -6,8 +6,8 @@
 
 [x] Aplicar o filtro de ordem alfabetica nas prateleiras quanto o botao for pressionado
 
-[] Aplicar o filtro de cor quando o botao for pressionado
+[x] Aplicar o filtro de cor quando o botao for pressionado
 
-[] Aplicar o filtro de tamanho quando o botao for selecionado
+[x] Aplicar o filtro de tamanho quando o botao for selecionado
 
 [] Quando o usuario arrastar um livro ele deve mudar sua posicao, na mesma prateleira ou nao

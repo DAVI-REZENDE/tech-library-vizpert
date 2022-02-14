@@ -23,7 +23,7 @@ import { FilterButton } from '../../components/FilterButton';
 import { Shelf } from '../../components/Shelf';
 
 import { books } from '../../data/books';
-import { useFilters } from '../../hooks/filters';
+import { useFilters } from '../../hooks/useFilters';
 
 export function Home() {
 

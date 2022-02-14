@@ -7,12 +7,15 @@ import BookF from '../assets/book_f.svg'
 import BookG from '../assets/book_g.svg'
 import BookH from '../assets/book_h.svg'
 import BookI from '../assets/book_i.svg'
-
+// ['red', 'orange', 'yellow', 'green', 'light_blue', 'dark_blue', 'violet', 'pink']
 export const books = [
   {
     id: "1",
     name: 'A',
-    color: 'yellow',
+    color: {
+      current_color:'yellow',
+      order_color: 3
+    },
     size: 5,
     image: BookA
   },
@@ -20,7 +23,10 @@ export const books = [
   {
     id: "2",
     name: 'B',
-    color: 'red',
+    color: {
+      current_color:'red',
+      order_color: 1
+    },
     size: 3,
     image: BookB
   },
@@ -28,7 +34,10 @@ export const books = [
   {
     id: "3",
     name: 'C',
-    color: 'orange',
+    color: {
+      current_color:'orange',
+      order_color: 2
+    },
     size: 6,
     image: BookC
   },
@@ -36,7 +45,10 @@ export const books = [
   {
     id: "4",
     name: 'D',
-    color: 'purple',
+    color: {
+      current_color:'violet',
+      order_color: 7
+    },
     size: 6,
     image: BookD
   },
@@ -44,7 +56,10 @@ export const books = [
   {
     id: "5",
     name: 'E',
-    color: 'light_blue',
+    color: {
+      current_color:'light_blue',
+      order_color: 5
+    },
     size: 1,
     image: BookE
   },
@@ -52,7 +67,10 @@ export const books = [
   {
     id: "6",
     name: 'F',
-    color: 'pink',
+    color: {
+      current_color:'pink',
+      order_color: 8
+    },
     size: 2,
     image: BookF
   },
@@ -60,7 +78,10 @@ export const books = [
   {
     id: "7",
     name: 'G',
-    color: 'pink',
+    color: {
+      current_color:'pink',
+      order_color: 8
+    },
     size: 2,
     image: BookG
   },
@@ -68,7 +89,10 @@ export const books = [
   {
     id: "8",
     name: 'H',
-    color: 'dark_blue',
+    color: {
+      current_color:'dark_blue',
+      order_color: 6
+    },
     size: 6,
     image: BookH
   },
@@ -76,7 +100,10 @@ export const books = [
   {
     id: "9",
     name: 'I',
-    color: 'green',
+    color: {
+      current_color:'green',
+      order_color: 4
+    },
     size: 6,
     image: BookI
   },
