@@ -1,34 +1,54 @@
-import styled, { css } from 'styled-components';
-
-const styleShelfTop = css`
-  margin-top: 12.3%;
-  margin-left: 5%;
-  /* height: 28%; */
-  width: calc(100% - (10% + 20.5%)); // 20.5% da sombra da prateleira, e 10% dos lados
-`;
-
-const styleShelfBottom = css`
-  margin-bottom: 7.9%;
-  margin-left: 5%;
-  /* height: 28%; */
-  width: calc(100% - (10% + 20.5%)); // 20.5% da sombra da prateleira, e 10% dos lados
-  justify-content: right;
-`;
+import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 0 8px;
+  margin-top: -16%;
+  position: relative;
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
 
-  ${({position}) => position === 'top' ? styleShelfTop : styleShelfBottom}
+  img.bg-shelf {
+    width: 100%;
+  }
 
-  div.book {
-    height: 92%;
-    width: 10%;
+  .shelf {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 19.5%;
 
-    img {
-      width: 100%;
-      height: 100%;
+    padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .row-top, .row-bottom {
+      display: flex;
+      gap: 8px;
+      width: calc(100% - 12%);
+      margin-left: 6%;
+
+      padding: 0 8px;
+    }
+
+    .row-top {
+      margin-top: 15.5%;
+    }
+
+    .row-bottom {
+      margin-top: 4.5%;
+      justify-content: right;
+    }
+
+    div.book {
+      width: 10%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 `;

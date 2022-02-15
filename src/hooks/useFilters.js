@@ -1,53 +1,62 @@
-export function useFilters(filter, listTop, listBottom) {
-  const listOne = listTop
-  const listTwo = listBottom
+export function useFilters(filter, data) {
+  const {listTop, listBottom, updateTop, updateBottom, updateFilter} = data
+  const listOne = Array.from(listTop)
+  const listTwo = Array.from(listBottom)
 
   if (filter === 'alphabetic') {
-    const filteredListTop = listOne.sort(function (a, b) {
-    
+
+    listOne.sort(function (a, b) {
       return (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0);
-     
     });
 
-    const filteredListBottom = listTwo.sort(function (a, b) {
-    
+    listTwo.sort(function (a, b) {
       return (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0);
-     
     }).reverse()
 
-    return {filteredListTop, filteredListBottom}
+    updateTop(listOne)
+    updateBottom(listTwo)
+    updateFilter('')
   }
 
   if (filter === 'colors') {
-    const filteredListTop = listOne.sort(function (a, b) {
-    
-      return (a.color.order_color > b.color.order_color) ? 1 : ((b.color.order_color > a.color.order_color) ? -1 : 0);
-     
-    });
+    const orderColors = ['red', 'orange', 'yellow', 'green', 'light_blue', 'dark_blue', 'violet', 'pink']
+ 
+    let filterByColorOne = []
+    let filterByColorTwo = []
 
-    const filteredListBottom = listTwo.sort(function (a, b) {
-    
-      return (a.color.order_color > b.color.order_color) ? 1 : ((b.color.order_color > a.color.order_color) ? -1 : 0);
-     
-    }).reverse()
+    orderColors.forEach((color) => {
+      listOne.forEach(book => {
+        if(color === book.color) {
+          filterByColorOne.push(book)
+        }
+      })
+    })
 
-    return {filteredListTop, filteredListBottom}
+    orderColors.forEach((color) => {
+      listTwo.forEach(book => {
+        if(color === book.color) {
+          filterByColorTwo.push(book)
+        }
+      })
+    })
+
+    updateTop(filterByColorOne)
+    updateBottom(filterByColorTwo.reverse())
+    updateFilter('')
   }
 
   if (filter === 'sizes') {
-    const filteredListTop = listOne.sort(function (a, b) {
-    
+    listOne.sort(function (a, b) {
       return (a.size > b.size) ? 1 : ((b.size > a.size) ? -1 : 0);
-     
     });
 
-    const filteredListBottom = listTwo.sort(function (a, b) {
-    
+    listTwo.sort(function (a, b) {
       return (a.size > b.size) ? 1 : ((b.size > a.size) ? -1 : 0);
-     
     }).reverse()
 
-    return {filteredListTop, filteredListBottom}
+    updateTop(listOne)
+    updateBottom(listTwo)
+    updateFilter('')
   }
 
 }

@@ -24,6 +24,8 @@ import { Shelf } from '../../components/Shelf';
 
 import { books } from '../../data/books';
 import { useFilters } from '../../hooks/useFilters';
+import { DragDropContext } from 'react-beautiful-dnd';
+import { Droppable } from 'react-beautiful-dnd';
 
 export function Home() {
 
@@ -33,14 +35,24 @@ export function Home() {
   const [applyFilter, setApplyFilter] = useState('')
   const [shelfBottom, setShelfBottom] = useState([])
   
-  const filteredBooks = useFilters(applyFilter, shelfTop, shelfBottom)
+  useFilters(applyFilter, {
+    listTop: shelfTop,
+    listBottom: shelfBottom,
+    updateTop: setShelfTop,
+    updateBottom: setShelfBottom,
+    updateFilter: setApplyFilter
+  })
 
   useEffect(() => {
     createBooksLists()
   }, [])
 
   function handleButtonFilterClick(type) {
-    setIsButtonFilterActive(type)
+    if(type === isButtonFilterActive) {
+      setIsButtonFilterActive('')
+    } else {
+      setIsButtonFilterActive(type)
+    }
   }
 
   function createBooksLists() {
@@ -75,6 +87,10 @@ export function Home() {
   function handleApplyFilter() {
     setApplyFilter(isButtonFilterActive)
   }
+
+  function onDragEng(result) {
+
+  }
  
   return (
     <Container>
@@ -85,19 +101,15 @@ export function Home() {
       </Header>
       <Main>
 
-        <Shelfs>
-
-          <Shelf 
-            position="top" 
-            data={shelfTop}
-          />
-
-          <Shelf 
-            position="bottom" 
-            data={shelfBottom}
-          />
-
-        </Shelfs>
+        
+        <Shelf 
+          data={{
+            listTop: shelfTop,
+            listBottom: shelfBottom,
+            updateListTop: setShelfTop,
+            updateListBottom: setShelfBottom
+          }}
+        />  
 
         <Filters>
           <img id="lady" src={ladyImage} />

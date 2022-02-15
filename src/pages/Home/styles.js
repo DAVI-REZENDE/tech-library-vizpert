@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import BgStripes from '../../assets/bg_stripes.svg'
 import BgFooter from '../../assets/ground.svg'
-import ShelfBg from '../../assets/bookcase.svg'
-import Panel from '../../assets/board.svg'
-import ButtonBg from '../../assets/button.svg'
+
 
 export const Container = styled.div`
 
@@ -31,19 +29,6 @@ export const Main = styled.main`
   display: flex;
   justify-content: center;
   position: relative;
-`;
-
-export const Shelfs = styled.div`
-  background: url(${ShelfBg}) no-repeat;
-  background-position: contain;
-  width: 40vw;
-  height: 50vh;
-
-  margin-top: -16%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 `;
 
 export const Filters = styled.div`
