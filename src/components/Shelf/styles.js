@@ -1,12 +1,29 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin-top: -16%;
+  margin-top: -40%;
+  margin-right: -20%;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40%;
+  width: 110%;
+
+  @media (min-width: 425px) {
+    width: 70%;
+    margin-top: -27%;
+  }
+
+  @media (min-width: 768px) {
+    width: 50%;
+    margin-top: -20%;
+    margin-right: 0;
+  }
+
+  @media (min-width: 1325px) {
+    width: 40%;
+    margin-top: -16%;
+  }
 
   img.bg-shelf {
     width: 100%;
@@ -26,11 +43,16 @@ export const Container = styled.div`
 
     .row-top, .row-bottom {
       display: flex;
-      gap: 8px;
+      gap: 3px;
+      padding: 0 3px;
+      
       width: calc(100% - 12%);
       margin-left: 6%;
 
-      padding: 0 8px;
+      @media (min-width: 820px) {
+        gap: 8px;
+        padding: 0 8px;
+      }
     }
 
     .row-top {

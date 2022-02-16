@@ -4,7 +4,6 @@ import {
   Container,
   Header,
   Main,
-  Shelfs,
   Filters,
   PanelFilters,
   FiltersWrapper,
@@ -13,7 +12,6 @@ import {
   OrganizeButton
 } from './styles';
 
-import ClockBase from '../../assets/clock_base.svg';
 import Logo from '../../assets/logo.svg';
 import ladyImage from '../../assets/lady.svg'
 import Panel from '../../assets/board.svg';
@@ -26,10 +24,10 @@ import { books } from '../../data/books';
 import { useFilters } from '../../hooks/useFilters';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { Droppable } from 'react-beautiful-dnd';
+import Clock from '../../components/Clock';
 
 export function Home() {
 
-  
   const [isButtonFilterActive, setIsButtonFilterActive] = useState('')
   const [shelfTop, setShelfTop] = useState([])
   const [applyFilter, setApplyFilter] = useState('')
@@ -87,17 +85,14 @@ export function Home() {
   function handleApplyFilter() {
     setApplyFilter(isButtonFilterActive)
   }
-
-  function onDragEng(result) {
-
-  }
  
   return (
     <Container>
       <Header>
-        <img src={ClockBase} />
+        {/* <img src={ClockBase} className='clock' /> */}
+        <Clock />
 
-        <img src={Logo} />
+        <img src={Logo} className='logo' />
       </Header>
       <Main>
 
@@ -134,6 +129,7 @@ export function Home() {
             </FiltersWrapper>
           </PanelFilters>
         </Filters>
+
       </Main>
     </Container>
   );

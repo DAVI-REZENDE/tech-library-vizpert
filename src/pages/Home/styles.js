@@ -4,7 +4,7 @@ import BgFooter from '../../assets/ground.svg'
 
 
 export const Container = styled.div`
-
+  overflow: hidden;
 `;
 
 export const Header = styled.header`
@@ -14,11 +14,25 @@ export const Header = styled.header`
 
   padding: 24px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
+  @media (min-width: 550px) {
+    justify-content: space-between;
+    align-items: center;
+  }
 
   img {
-    width: 200px;
+    width: 100px;
+    @media (min-width: 550px) {
+      width: 15%;
+    }
+
+    &.clock {
+      display: none;
+      @media (min-width: 550px) {
+        display: block;
+      }
+    }
   }
 `;
 
@@ -34,11 +48,23 @@ export const Main = styled.main`
 export const Filters = styled.div`
   position: absolute;
   left: 16px;
-  width: 40vw;
+  width: 90%;
   height: 100%;
 
   display: flex;
   align-items: flex-end;
+
+  @media (min-width: 425px) {
+    max-width: 325px;
+  }
+
+  @media (min-width: 820px) { 
+    max-width: 450px;
+  }
+
+  @media (min-width: 1325px) {
+    max-width: 550px;
+  }
 
   img#lady {
     position: absolute;
@@ -72,11 +98,15 @@ export const PanelFilters = styled.div`
 export const FiltersWrapper = styled.div`
   position: absolute;
   right: 10%;
-  /* bottom: 20%; */
-  top: 5%;
+  bottom: 15%;
 
-  width: 40%;
+  width: 50%;
   padding: 16px;
+
+  @media (min-width: 820px) { 
+    bottom: 25%;
+    width: 40%;
+  }
 
   display: flex;
   flex-direction: column;
@@ -84,10 +114,13 @@ export const FiltersWrapper = styled.div`
 
   span {
     color: #C3B6D3;
-    font-size: 16px;
+    font-size: 12px;
     font-family: 'Zilla Slab', serif;
     text-transform: uppercase;
     letter-spacing: 8px;
+    @media (min-width: 820px) {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -104,6 +137,9 @@ export const FilterButtons = styled.div`
 export const Divider = styled.div`
   width: 80%;
   height: 5px;
+  @media (max-width: 946px) {
+    height: 2px;
+  }
   background-color: #E7DFEF;
 
   margin: 5% 0;
