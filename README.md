@@ -6,6 +6,12 @@
 
 This is a test from vizpert company for junior dev using `ReactJs`, everything was done as requested plus the extra clock working
 
+### Technologies using in this project:
+
+- ReactJs
+- Styled Components
+- React Beautiful Dnd
+
 ### On your machine:
 
 ```bash
